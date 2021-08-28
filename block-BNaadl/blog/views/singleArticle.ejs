@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Article Details</h1>
+    <div>
+      <h4><%= article.title %></h4>
+      <h4><%= article.author %></h4>
+      <p><%= article.description %></p>
+      <p>Tags: <% article.tags.forEach((tag) => {%> <%= tag %> <% }) %></p>
+      <p>Likes: <%= article.likes %></p>
+      <div class="btns">
+        <a href="" id="incLikes" class="btn">Like</a>
+        <a href="" id="decLikes" class="btn">Dislike</a>
+        <a href="/articles/<%= article.id %>/edit">Edit</a>
+        <a herf="/articles/<%= article.id %>/delete">Delete</a>
+      </div>
+    </div>
+  </body>
+</html>
