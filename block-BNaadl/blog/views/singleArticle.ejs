@@ -4,21 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Article Details</title>
   </head>
   <body>
+    <header class="header flex">
+      <a href="/">Home</a>
+      <a href="/articles/new">Add Article</a>
+    </header>
     <h1>Article Details</h1>
-    <div>
-      <h4><%= article.title %></h4>
-      <h4><%= article.author %></h4>
-      <p><%= article.description %></p>
-      <p>Tags: <% article.tags.forEach((tag) => {%> <%= tag %> <% }) %></p>
-      <p>Likes: <%= article.likes %></p>
-      <div class="btns">
-        <a href="" id="incLikes" class="btn">Like</a>
-        <a href="" id="decLikes" class="btn">Dislike</a>
-        <a href="/articles/<%= article.id %>/edit">Edit</a>
-        <a herf="/articles/<%= article.id %>/delete">Delete</a>
+    <div class="articles flex">
+      <div class="article-item">
+        <h3><%= article.title %></h3>
+        <h4><%= article.author %></h4>
+        <p><%= article.description %></p>
+        <p>Tags: <% article.tags.forEach((tag) => {%> <%= tag %> <% }) %></p>
+        <p>Likes: <%= article.likes ? article.likes : 0 %></p>
+        <div class="btns">
+          <a href="/articles/<%= article.id %>/like" class="btn">Like 👍</a>
+          <a href="/articles/<%= article.id %>/dislike" class="btn"
+            >Dislike 👎</a
+          >
+          <a href="/articles/<%= article.id %>/edit" class="btn">Edit</a>
+          <a href="/articles/<%= article.id %>/delete" class="btn">Delete</a>
+        </div>
       </div>
     </div>
   </body>
