@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header flex">
+      <a href="/">Home</a>
+      <nav class="nav">
+        <a href="/books">Books</a>
+        <a href="/authors">Authors</a>
+        <a href="/categories">Categories</a>
+      </nav>
+    </header>
+    <main>
+      <h1 class="section-header"><%= category.name %></h1>
+      <% books.forEach(book => { %>
+      <div>
+        <a class="book-title" href="/books/<%= book.id %>"><%= book.title %></a>
+        <p class="book-summary"><%= book.summary %></p>
+        <hr />
+      </div>
+      <% }) %>
+    </main>
+  </body>
+</html>
