@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body class="intro">
+  <body>
     <header class="header flex">
       <a href="/">Home</a>
       <nav class="nav">
@@ -19,7 +19,19 @@
         <a href="/categories">Categories</a>
       </nav>
     </header>
-    <h1>Welcome to <%= title %> App!</h1>
-    <a href="/books" class="btn">View Books</a>
+    <main>
+      <h1 class="section-header">All Categories</h1>
+      <div>
+        <a href="/categories/new" class="btn">Add Category</a>
+      </div>
+
+      <div class="categories flex">
+        <% categories.forEach(category => { %>
+        <h4>
+          <a href="/categories/<%= category.id %>"><%= category.name %></a>
+        </h4>
+        <% }) %>
+      </div>
+    </main>
   </body>
 </html>

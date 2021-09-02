@@ -7,8 +7,8 @@ let bookSchema = new Schema({
   pages: Number,
   publication: Number,
   cover_image: String,
-  category: { type: [String], required: true },
-  author: { type: Schema.Types.ObjectId, required: true },
+  category: { type: [Schema.Types.ObjectId], ref: 'Category', required: true },
+  author: { type: Schema.Types.ObjectId, ref: 'Author', required: true },
 });
 
-module.exports = bookSchema;
+module.exports = mongoose.model('Book', bookSchema);
