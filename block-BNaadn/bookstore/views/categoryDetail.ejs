@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body class="intro">
+  <body>
     <header class="header flex">
       <a href="/">Home</a>
       <nav class="nav">
@@ -19,7 +19,15 @@
         <a href="/categories">Categories</a>
       </nav>
     </header>
-    <h1>Welcome to <%= title %> App!</h1>
-    <a href="/books" class="btn">View Books</a>
+    <main>
+      <h1 class="section-header"><%= category.name %></h1>
+      <% books.forEach(book => { %>
+      <div>
+        <a class="book-title" href="/books/<%= book.id %>"><%= book.title %></a>
+        <p class="book-summary"><%= book.summary %></p>
+        <hr />
+      </div>
+      <% }) %>
+    </main>
   </body>
 </html>

@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var booksRouter = require('./routes/books');
+var authorsRouter = require('./routes/authors');
+var categoriesRouter = require('./routes/categories');
 
 mongoose.connect('mongodb://127.0.0.1:27017/bookstore', (err) => {
   console.log(err ? err : 'Connected to database');
@@ -26,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
+app.use('/authors', authorsRouter);
+app.use('/categories', categoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

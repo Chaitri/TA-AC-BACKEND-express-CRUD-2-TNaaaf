@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body class="intro">
+  <body>
     <header class="header flex">
       <a href="/">Home</a>
       <nav class="nav">
@@ -19,7 +19,18 @@
         <a href="/categories">Categories</a>
       </nav>
     </header>
-    <h1>Welcome to <%= title %> App!</h1>
-    <a href="/books" class="btn">View Books</a>
+    <h1 class="section-header">New Category</h1>
+    <form action="/categories" method="POST" class="form">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Fantasy, Adventure ..."
+        />
+      </div>
+      <input type="submit" value="Add Category" class="btn-submit" />
+    </form>
   </body>
 </html>
